@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elementor Armstrong\n"
+"POT-Creation-Date: 2022-01-25 15:57+0100\n"
+"PO-Revision-Date: 2022-01-25 15:58+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: widgets-register.php:144
+msgid "Armstrong"
+msgstr "Armstrong"
+
+#: widgets/carousel_progressbar.php:67
+msgid "Carousel with ProgressBar"
+msgstr "Carousel with ProgressBar"
+
+#: widgets/carousel_progressbar.php:138 widgets/carousel_progressbar.php:385
+#: widgets/carousel_progressbar_left.php:138
+#: widgets/carousel_progressbar_left.php:312 widgets/history.php:138
+#: widgets/history.php:291 widgets/image_title_description.php:138
+#: widgets/image_title_description.php:280
+msgid "Content"
+msgstr "Content"
+
+#: widgets/carousel_progressbar.php:149
+#: widgets/carousel_progressbar_left.php:149
+msgid "Title first line"
+msgstr "Title first line"
+
+#: widgets/carousel_progressbar.php:159
+#: widgets/carousel_progressbar_left.php:159
+msgid "Title second line"
+msgstr "Title second line"
+
+#: widgets/carousel_progressbar.php:169 widgets/carousel_progressbar.php:445
+#: widgets/history.php:181 widgets/history.php:389
+#: widgets/image_title_description.php:341
+msgid "Description"
+msgstr "Description"
+
+#: widgets/carousel_progressbar.php:179 widgets/carousel_progressbar.php:254
+#: widgets/carousel_progressbar_left.php:169 widgets/history.php:160
+#: widgets/image_title_description.php:146
+#: widgets/image_title_description.php:208
+msgid "Image"
+msgstr "Image"
+
+#: widgets/carousel_progressbar.php:190
+#: widgets/carousel_progressbar_left.php:180
+msgid "Slides"
+msgstr "Slides"
+
+#: widgets/carousel_progressbar.php:214 widgets/image_title_description.php:180
+msgid "Additional options"
+msgstr "Additional options"
+
+#: widgets/carousel_progressbar.php:222 widgets/image_title_description.php:188
+msgid "Animation speed"
+msgstr "Animation speed"
+
+#: widgets/carousel_progressbar.php:237
+msgid "Auto Play speed"
+msgstr "Auto Play speed"
+
+#: widgets/carousel_progressbar.php:262 widgets/image_title_description.php:216
+msgid "Width"
+msgstr "Width"
+
+#: widgets/carousel_progressbar.php:292 widgets/image_title_description.php:246
+msgid "Height"
+msgstr "Height"
+
+#: widgets/carousel_progressbar.php:323
+msgid "Animation on hover"
+msgstr "Animation on hover"
+
+#: widgets/carousel_progressbar.php:326
+msgid "None"
+msgstr "None"
+
+#: widgets/carousel_progressbar.php:327
+msgid "Zoom"
+msgstr "Zoom"
+
+#: widgets/carousel_progressbar.php:328
+msgid "Rotate"
+msgstr "Rotate"
+
+#: widgets/carousel_progressbar.php:341
+#: widgets/carousel_progressbar_left.php:203 widgets/history.php:214
+msgid "Navigation"
+msgstr "Navigation"
+
+#: widgets/carousel_progressbar.php:349
+#: widgets/carousel_progressbar_left.php:276
+msgid "Progress Bar"
+msgstr "Progress Bar"
+
+#: widgets/carousel_progressbar.php:357 widgets/carousel_progressbar.php:410
+#: widgets/carousel_progressbar.php:462
+#: widgets/carousel_progressbar_left.php:219
+#: widgets/carousel_progressbar_left.php:252
+#: widgets/carousel_progressbar_left.php:284
+#: widgets/carousel_progressbar_left.php:337 widgets/history.php:230
+#: widgets/history.php:263 widgets/history.php:328 widgets/history.php:360
+#: widgets/history.php:418 widgets/history.php:439
+#: widgets/image_title_description.php:305
+#: widgets/image_title_description.php:358
+msgid "Color"
+msgstr "Color"
+
+#: widgets/carousel_progressbar.php:369 widgets/carousel_progressbar.php:421
+#: widgets/carousel_progressbar.php:473
+#: widgets/carousel_progressbar_left.php:231
+#: widgets/carousel_progressbar_left.php:264
+#: widgets/carousel_progressbar_left.php:296
+#: widgets/carousel_progressbar_left.php:348 widgets/history.php:242
+#: widgets/history.php:275 widgets/history.php:339 widgets/history.php:372
+#: widgets/image_title_description.php:316
+#: widgets/image_title_description.php:369
+msgid "Background Color"
+msgstr "Background Color"
+
+#: widgets/carousel_progressbar.php:394
+#: widgets/carousel_progressbar_left.php:321 widgets/history.php:300
+#: widgets/image_title_description.php:157
+#: widgets/image_title_description.php:289
+msgid "Title"
+msgstr "Title"
+
+#: widgets/carousel_progressbar.php:432 widgets/carousel_progressbar.php:484
+#: widgets/carousel_progressbar_left.php:359
+#: widgets/image_title_description.php:327
+#: widgets/image_title_description.php:380
+msgid "Padding"
+msgstr "Padding"
+
+#: widgets/carousel_progressbar_left.php:67
+msgid "Carousel with ProgressBar Left"
+msgstr "Carousel with ProgressBar Left"
+
+#: widgets/carousel_progressbar_left.php:211 widgets/history.php:222
+msgid "Prev Arrow"
+msgstr "Prev Arrow"
+
+#: widgets/carousel_progressbar_left.php:243 widgets/history.php:254
+msgid "Next Arrow"
+msgstr "Next Arrow"
+
+#: widgets/history.php:67
+msgid "History"
+msgstr "History"
+
+#: widgets/history.php:149
+msgid "Date"
+msgstr "Date"
+
+#: widgets/history.php:183 widgets/image_title_description.php:169
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
+"luctus nec ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
+"luctus nec ullamcorper mattis, pulvinar dapibus leo."
+
+#: widgets/history.php:191
+msgid "Events"
+msgstr "Events"
+
+#: widgets/history.php:321 widgets/history.php:411
+msgid "Normal"
+msgstr "Normal"
+
+#: widgets/history.php:353 widgets/history.php:432
+msgid "Active"
+msgstr "Active"
+
+#: widgets/image_title_description.php:67
+msgid "Image with Title and Description"
+msgstr "Image with Title and Description"

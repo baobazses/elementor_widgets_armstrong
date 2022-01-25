@@ -1,0 +1,99 @@
+/* ----- Carousel Navigation ----- */
+
+.carousel-progressbar-navigation-container .progress-bar-wrapper {
+    width: 100%;
+    height: 4px;
+    position: relative;
+}
+
+.carousel-progressbar-navigation-container .progress-bar {
+    position: absolute;
+    height: 4px;
+    left: 0;
+    transition: left 0.5s;
+}
+
+
+/* ----- Slide List ----- */
+
+.carousel-progressbar-wrapper {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.carousel-progressbar-wrapper .slides {
+    display: flex;
+    column-gap: 30px;
+}
+
+.carousel-progressbar-wrapper .slide {
+    flex-shrink: 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.carousel-progressbar-wrapper .slide .slidetitle,
+.carousel-progressbar-wrapper .slide .slidedescription {
+    width: fit-content;
+    z-index: 10;
+}
+
+.carousel-progressbar-wrapper .slide .slidetitle-first {
+    transition-property: margin;
+}
+
+.carousel-progressbar-wrapper .slide .slidetitle-second {
+    transition-property: margin;
+    margin-top: 10px;
+}
+
+.carousel-progressbar-wrapper .slide:hover .slidetitle-first {
+    margin: 0 0 0 20px;
+}
+
+.carousel-progressbar-wrapper .slide:hover .slidetitle-second {
+    margin: 10px 0 0 35px;
+}
+
+.carousel-progressbar-wrapper .slide .slidedescription {
+    margin-top: 10px;
+}
+
+.slide-transition {
+    transition-timing-function: ease;
+}
+
+
+/* ---- Slide image ---- */
+
+.carousel-progressbar-wrapper .slide .slide_image {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.carousel-progressbar-wrapper .slide .slide_image.zoom {
+    transition-property: background-size;
+}
+
+.carousel-progressbar-wrapper .slide:hover .slide_image.zoom {
+    background-size: 120% 120%;
+}
+
+.carousel-progressbar-wrapper .slide .slide_image.rotate {
+    transition-property: transform;
+}
+
+.carousel-progressbar-wrapper .slide:hover .slide_image.rotate {
+    transform: rotate(-5deg);
+}

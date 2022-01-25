@@ -1,0 +1,44 @@
+.image-container {
+    background-position: center center;
+    background-size: 100% 100%;
+    padding: 30px;
+    transition-property: background-size;
+    overflow: hidden;
+}
+
+.image-container:hover {
+    background-size: 120% 120%;
+}
+
+.image-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-content div {
+    width: fit-content;
+}
+
+.image-container .image_title {
+    transition-property: bottom;
+    position: absolute;
+    bottom: 0;
+}
+
+.image-container .image_description {
+    position: absolute;
+    opacity: 0;
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.image-container:hover .image_description {
+    opacity: 1;
+    bottom: 0;
+    transform: initial;
+}
+
+.image-transition {
+    transition-timing-function: ease;
+}
