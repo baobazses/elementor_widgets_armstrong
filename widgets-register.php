@@ -72,6 +72,7 @@ class Widgets
 		require_once 'widgets/carousel_progressbar.php';
 		require_once 'widgets/carousel_progressbar_left.php';
 		require_once 'widgets/image_title_description.php';
+		require_once 'widgets/vertical_carousel.php';
 	}
 
 	/**
@@ -92,6 +93,7 @@ class Widgets
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\CarouselProgressBar());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\CarouselProgressBarLeft());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\ImageTitleDescription());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\VerticalCarousel());
 	}
 
 
@@ -109,6 +111,7 @@ class Widgets
 		wp_register_style('carousel_progressbar-style', plugins_url('assets/css/carousel_progressbar.css', __FILE__));
 		wp_register_style('carousel_progressbar_left-style', plugins_url('assets/css/carousel_progressbar_left.css', __FILE__));
 		wp_register_style('image_title_description-style', plugins_url('assets/css/image_title_description.css', __FILE__));
+		wp_register_style('vertical_carousel-style', plugins_url('assets/css/vertical_carousel.css', __FILE__));
 	}
 
 
@@ -126,6 +129,7 @@ class Widgets
 		wp_register_script('carousel_progressbar-script', plugins_url('assets/js/carousel_progressbar.js', __FILE__), ['jquery'], false, true);
 		wp_register_script('carousel_progressbar_left-script', plugins_url('assets/js/carousel_progressbar_left.js', __FILE__), ['jquery'], false, true);
 		wp_register_script('image_title_description-script', plugins_url('assets/js/image_title_description.js', __FILE__));
+		wp_register_script('vertical_carousel-script', plugins_url('assets/js/vertical_carousel.js', __FILE__));
 	}
 
 	/**

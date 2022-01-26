@@ -4,6 +4,7 @@
     padding: 30px;
     transition-property: background-size;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .image-container:hover {
