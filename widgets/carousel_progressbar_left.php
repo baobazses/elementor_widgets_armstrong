@@ -472,11 +472,11 @@ class CarouselProgressBarLeft extends Widget_Base
                                         <div class="slide">
                                             <div class="slidetitle-container">
                                                 <div class="slidetitle slidetitle-first">
-                                                    {{{ item['slide_first_line'] }}}
+                                                    {{{ item.slide_first_line }}}
                                                 </div>
                                                 <# if (item.slide_second_line) { #>
                                                     <div class="slidetitle slidetitle-second">
-                                                        {{{ item['slide_second_line'] }}}
+                                                        {{{ item.slide_second_line }}}
                                                     </div>
                                                     <# } #>
                                             </div>

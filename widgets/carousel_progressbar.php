@@ -570,16 +570,16 @@ class CarouselProgressBar extends Widget_Base
                             <# _.each( settings.slides, function( item ) { #>
                                 <div class="slide image_size">
                                     <div class="slidetitle slidetitle-first slide-transition">
-                                        {{{ item['slide_first_line'] }}}
+                                        {{{ item.slide_first_line }}}
                                     </div>
                                     <# if (item.slide_second_line) { #>
                                         <div class="slidetitle slidetitle-second slide-transition">
-                                            {{{ item['slide_second_line'] }}}
+                                            {{{ item.slide_second_line }}}
                                         </div>
                                         <# } #>
                                             <# if (item.slide_description) { #>
                                                 <div class="slidedescription">
-                                                    {{{ item['slide_description'] }}}
+                                                    {{{ item.slide_description }}}
                                                 </div>
                                                 <# } #>
                                                     <div class="slide_image {{{ settings.image_transition_type }}} slide-transition" style="background-image : url('{{{ item.slide_image.url }}}');"></div>
