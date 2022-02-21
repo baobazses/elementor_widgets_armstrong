@@ -217,17 +217,54 @@ class CarouselProgressBar extends Widget_Base
         );
 
         $this->add_control(
-            'image_transition',
+            'show_description_on_hover',
             [
-                'label' => __('Animation speed', 'elementor-armstrong'),
+                'label' => __('Show description on hover', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'elementor-armstrong'),
+                'label_off' => __('No', 'elementor-armstrong'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+
+        $this->add_control(
+            'hover_transition',
+            [
+                'label' => __('Hover animation speed', 'elementor-armstrong'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 0,
+                'min' => 100,
                 'max' => 60000,
                 'step' => 1,
-                'default' => 300,
+                'default' => 500,
                 'selectors' => [
                     '{{WRAPPER}} .slide-transition' => 'transition-duration : {{VALUE}}ms;',
                 ],
+            ]
+        );
+
+        $this->add_control(
+            'image_transition',
+            [
+                'label' => __('Slide Animation speed', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 100,
+                'max' => 60000,
+                'step' => 1,
+                'default' => 300
+            ]
+        );
+
+
+        $this->add_control(
+            'has_autoplay',
+            [
+                'label' => __('Auto Play Slider ?', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'elementor-armstrong'),
+                'label_off' => __('No', 'elementor-armstrong'),
+                'return_value' => 'yes',
+                'default' => 'no',
             ]
         );
 
@@ -236,7 +273,8 @@ class CarouselProgressBar extends Widget_Base
             [
                 'label' => __('Auto Play speed', 'elementor-armstrong'),
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 0,
+                'condition' => ['has_autoplay' => 'yes'],
+                'min' => 1000,
                 'max' => 60000,
                 'step' => 1,
                 'default' => 5000,
@@ -340,6 +378,71 @@ class CarouselProgressBar extends Widget_Base
             [
                 'label' => __('Navigation', 'elementor-armstrong'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'prev_arrow_heading',
+            [
+                'label' => __('Prev Arrow', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_control(
+            'prev_arrow_color',
+            [
+                'label' => __('Color', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#FFFFFF',
+                'selectors' => [
+                    '{{WRAPPER}} .prev-arrow' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'prev_arrow_background_color',
+            [
+                'label' => __('Background Color', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#000000',
+                'selectors' => [
+                    '{{WRAPPER}} .prev-arrow' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'next_arrow_heading',
+            [
+                'label' => __('Next Arrow', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before'
+            ]
+        );
+
+        $this->add_control(
+            'next_arrow_color',
+            [
+                'label' => __('Color', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#FFFFFF',
+                'selectors' => [
+                    '{{WRAPPER}} .next-arrow' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'next_arrow_background_color',
+            [
+                'label' => __('Background Color', 'elementor-armstrong'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#000000',
+                'selectors' => [
+                    '{{WRAPPER}} .next-arrow' => 'background-color: {{VALUE}}',
+                ],
             ]
         );
 
@@ -509,37 +612,48 @@ class CarouselProgressBar extends Widget_Base
 
         if ($settings['slides']) {
 ?>
-            <div class="carousel-progressbar-container" autoplay="<?= $settings['image_autoplay'] ?>">
-                <?php
-                echo '<div class="carousel-progressbar-wrapper">';
-                echo '<div class="slides">';
-                foreach ($settings['slides'] as $item) {
-                ?>
-                    <div class="slide image_size">
-                        <div class="slidetitle slidetitle-first slide-transition">
-                            <?= $item['slide_first_line'] ?>
-                        </div>
-                        <?php
-                        if ($item['slide_second_line']) {
-                        ?>
-                            <div class="slidetitle slidetitle-second slide-transition">
-                                <?= $item['slide_second_line'] ?>
-                            </div>
-                        <?php } ?>
-                        <?php
-                        if ($item['slide_description']) {
-                        ?>
-                            <div class="slidedescription">
-                                <?= $item['slide_description'] ?>
-                            </div>
-                        <?php } ?>
-                        <div class="slide_image <?= $settings['image_transition_type'] ?> slide-transition" style="background-image : url('<?= $item['slide_image']['url'] ?>');"></div>
+            <div class="carousel-progressbar-container" transition-speed="<?= $settings['image_transition'] ?>" autoplay="<?= 'yes' === $settings['has_autoplay'] ? $settings['image_autoplay']  : '' ?>">
+                <div class="carousel-progressbar-slides-container">
+                    <div class="slide-arrow prev-arrow" role="button" aria-label="Previous slide">
+                        <i aria-hidden="true" class="eicon-chevron-left"></i>
+                        <span class="elementor-screen-only">Précédent</span>
                     </div>
-                <?php
-                }
-                echo '</div>';
-                echo '</div>';
-                if (count($settings['slides']) > 1) { ?>
+                    <div class="carousel-progressbar-wrapper">
+                        <div class="slides">
+                            <?php
+                            foreach ($settings['slides'] as $item) {
+                            ?>
+                                <div class="slide image_size <?= 'yes' === $settings['show_description_on_hover'] ? 'show_description_on_hover' : '' ?>">
+                                    <div class="slidetitle slidetitle-first slide-transition">
+                                        <?= $item['slide_first_line'] ?>
+                                    </div>
+                                    <?php
+                                    if ($item['slide_second_line']) {
+                                    ?>
+                                        <div class="slidetitle slidetitle-second slide-transition">
+                                            <?= $item['slide_second_line'] ?>
+                                        </div>
+                                    <?php } ?>
+                                    <?php
+                                    if ($item['slide_description']) {
+                                    ?>
+                                        <div class="slidedescription">
+                                            <?= $item['slide_description'] ?>
+                                        </div>
+                                    <?php } ?>
+                                    <div class="slide_image <?= $settings['image_transition_type'] ?> slide-transition" style="background-image : url('<?= $item['slide_image']['url'] ?>');"></div>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="slide-arrow next-arrow" role="button" aria-label="Next slide">
+                        <i aria-hidden="true" class="eicon-chevron-right"></i>
+                        <span class="elementor-screen-only">Suivant</span>
+                    </div>
+                </div>
+                <?php if (count($settings['slides']) > 1) { ?>
                     <div class="carousel-progressbar-navigation-container">
                         <div class="progress-bar-wrapper">
                             <div class="progress-bar" style="width: <?= 100 / count($settings['slides']) ?>%;"></div>
@@ -564,27 +678,37 @@ class CarouselProgressBar extends Widget_Base
         {
             ?>
             <# if ( settings.slides.length ) { #>
-                <div class="carousel-progressbar-container" autoplay="{{{ settings.image_autoplay }}}">
-                    <div class="carousel-progressbar-wrapper">
-                        <div class="slides">
-                            <# _.each( settings.slides, function( item ) { #>
-                                <div class="slide image_size">
-                                    <div class="slidetitle slidetitle-first slide-transition">
-                                        {{{ item.slide_first_line }}}
-                                    </div>
-                                    <# if (item.slide_second_line) { #>
-                                        <div class="slidetitle slidetitle-second slide-transition">
-                                            {{{ item.slide_second_line }}}
+                <div class="carousel-progressbar-container" transition-speed="{{{ settings.image_transition }}}" autoplay="{{{ 'yes' === settings.has_autoplay ? settings.image_autoplay  : '' }}}">
+                    <div class="carousel-progressbar-slides-container">
+                        <div class="slide-arrow prev-arrow" role="button" aria-label="Previous slide">
+                            <i aria-hidden="true" class="eicon-chevron-left"></i>
+                            <span class="elementor-screen-only">Précédent</span>
+                        </div>
+                        <div class="carousel-progressbar-wrapper">
+                            <div class="slides">
+                                <# _.each( settings.slides, function( item ) { #>
+                                    <div class="slide image_size {{{ 'yes' === settings.show_description_on_hover ? 'show_description_on_hover' : '' }}}">
+                                        <div class="slidetitle slidetitle-first slide-transition">
+                                            {{{ item.slide_first_line }}}
                                         </div>
-                                        <# } #>
-                                            <# if (item.slide_description) { #>
-                                                <div class="slidedescription">
-                                                    {{{ item.slide_description }}}
-                                                </div>
-                                                <# } #>
-                                                    <div class="slide_image {{{ settings.image_transition_type }}} slide-transition" style="background-image : url('{{{ item.slide_image.url }}}');"></div>
-                                </div>
-                                <# }); #>
+                                        <# if (item.slide_second_line) { #>
+                                            <div class="slidetitle slidetitle-second slide-transition">
+                                                {{{ item.slide_second_line }}}
+                                            </div>
+                                            <# } #>
+                                                <# if (item.slide_description) { #>
+                                                    <div class="slidedescription">
+                                                        {{{ item.slide_description }}}
+                                                    </div>
+                                                    <# } #>
+                                                        <div class="slide_image {{{ settings.image_transition_type }}} slide-transition" style="background-image : url('{{{ item.slide_image.url }}}');"></div>
+                                    </div>
+                                    <# }); #>
+                            </div>
+                        </div>
+                        <div class="slide-arrow next-arrow" role="button" aria-label="Next slide">
+                            <i aria-hidden="true" class="eicon-chevron-right"></i>
+                            <span class="elementor-screen-only">Suivant</span>
                         </div>
                     </div>
                     <# if (settings.slides.length> 1) {#>

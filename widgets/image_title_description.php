@@ -164,7 +164,7 @@ class ImageTitleDescription extends Widget_Base
         $this->add_control(
             'description',
             [
-                'label' => esc_html__('Description', 'elementor-armstrong'),
+                'label' => __('Description', 'elementor-armstrong'),
                 'type' => \Elementor\Controls_Manager::WYSIWYG,
                 'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-armstrong'),
             ]

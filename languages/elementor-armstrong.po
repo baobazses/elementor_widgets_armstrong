@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Elementor Armstrong\n"
-"POT-Creation-Date: 2022-01-25 15:57+0100\n"
-"PO-Revision-Date: 2022-01-25 15:58+0100\n"
+"POT-Creation-Date: 2022-02-21 14:59+0100\n"
+"PO-Revision-Date: 2022-02-21 14:59+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: widgets-register.php:144
+#: widgets-register.php:148
 msgid "Armstrong"
 msgstr "Armstrong"
 
@@ -23,11 +23,12 @@ msgstr "Armstrong"
 msgid "Carousel with ProgressBar"
 msgstr "Carousel with ProgressBar"
 
-#: widgets/carousel_progressbar.php:138 widgets/carousel_progressbar.php:385
+#: widgets/carousel_progressbar.php:138 widgets/carousel_progressbar.php:488
 #: widgets/carousel_progressbar_left.php:138
 #: widgets/carousel_progressbar_left.php:312 widgets/history.php:138
 #: widgets/history.php:291 widgets/image_title_description.php:138
-#: widgets/image_title_description.php:280
+#: widgets/image_title_description.php:280 widgets/vertical_carousel.php:138
+#: widgets/vertical_carousel.php:159 widgets/vertical_carousel.php:229
 msgid "Content"
 msgstr "Content"
 
@@ -41,21 +42,22 @@ msgstr "Title first line"
 msgid "Title second line"
 msgstr "Title second line"
 
-#: widgets/carousel_progressbar.php:169 widgets/carousel_progressbar.php:445
+#: widgets/carousel_progressbar.php:169 widgets/carousel_progressbar.php:548
 #: widgets/history.php:181 widgets/history.php:389
-#: widgets/image_title_description.php:341
+#: widgets/image_title_description.php:167
+#: widgets/image_title_description.php:341 widgets/vertical_carousel.php:396
 msgid "Description"
 msgstr "Description"
 
-#: widgets/carousel_progressbar.php:179 widgets/carousel_progressbar.php:254
+#: widgets/carousel_progressbar.php:179 widgets/carousel_progressbar.php:292
 #: widgets/carousel_progressbar_left.php:169 widgets/history.php:160
 #: widgets/image_title_description.php:146
-#: widgets/image_title_description.php:208
+#: widgets/image_title_description.php:208 widgets/vertical_carousel.php:170
 msgid "Image"
 msgstr "Image"
 
 #: widgets/carousel_progressbar.php:190
-#: widgets/carousel_progressbar_left.php:180
+#: widgets/carousel_progressbar_left.php:180 widgets/vertical_carousel.php:206
 msgid "Slides"
 msgstr "Slides"
 
@@ -63,50 +65,71 @@ msgstr "Slides"
 msgid "Additional options"
 msgstr "Additional options"
 
-#: widgets/carousel_progressbar.php:222 widgets/image_title_description.php:188
-msgid "Animation speed"
-msgstr "Animation speed"
+#: widgets/carousel_progressbar.php:222
+msgid "Show description on hover"
+msgstr "Show description on hover"
 
-#: widgets/carousel_progressbar.php:237
+#: widgets/carousel_progressbar.php:224 widgets/carousel_progressbar.php:264
+msgid "Yes"
+msgstr "Yes"
+
+#: widgets/carousel_progressbar.php:225 widgets/carousel_progressbar.php:265
+msgid "No"
+msgstr "NoneNo"
+
+#: widgets/carousel_progressbar.php:234
+msgid "Hover animation speed"
+msgstr "Hover animation speed"
+
+#: widgets/carousel_progressbar.php:249
+msgid "Slide Animation speed"
+msgstr "Slide Animation speed"
+
+#: widgets/carousel_progressbar.php:262
+msgid "Auto Play Slider ?"
+msgstr "Auto Play Slider ?"
+
+#: widgets/carousel_progressbar.php:274
 msgid "Auto Play speed"
 msgstr "Auto Play speed"
 
-#: widgets/carousel_progressbar.php:262 widgets/image_title_description.php:216
+#: widgets/carousel_progressbar.php:300 widgets/image_title_description.php:216
 msgid "Width"
 msgstr "Width"
 
-#: widgets/carousel_progressbar.php:292 widgets/image_title_description.php:246
+#: widgets/carousel_progressbar.php:330 widgets/image_title_description.php:246
 msgid "Height"
 msgstr "Height"
 
-#: widgets/carousel_progressbar.php:323
+#: widgets/carousel_progressbar.php:361
 msgid "Animation on hover"
 msgstr "Animation on hover"
 
-#: widgets/carousel_progressbar.php:326
+#: widgets/carousel_progressbar.php:364
 msgid "None"
 msgstr "None"
 
-#: widgets/carousel_progressbar.php:327
+#: widgets/carousel_progressbar.php:365
 msgid "Zoom"
 msgstr "Zoom"
 
-#: widgets/carousel_progressbar.php:328
+#: widgets/carousel_progressbar.php:366
 msgid "Rotate"
 msgstr "Rotate"
 
-#: widgets/carousel_progressbar.php:341
+#: widgets/carousel_progressbar.php:379
 #: widgets/carousel_progressbar_left.php:203 widgets/history.php:214
 msgid "Navigation"
 msgstr "Navigation"
 
-#: widgets/carousel_progressbar.php:349
-#: widgets/carousel_progressbar_left.php:276
-msgid "Progress Bar"
-msgstr "Progress Bar"
+#: widgets/carousel_progressbar.php:387
+#: widgets/carousel_progressbar_left.php:211 widgets/history.php:222
+msgid "Prev Arrow"
+msgstr "Prev Arrow"
 
-#: widgets/carousel_progressbar.php:357 widgets/carousel_progressbar.php:410
-#: widgets/carousel_progressbar.php:462
+#: widgets/carousel_progressbar.php:395 widgets/carousel_progressbar.php:428
+#: widgets/carousel_progressbar.php:460 widgets/carousel_progressbar.php:513
+#: widgets/carousel_progressbar.php:565
 #: widgets/carousel_progressbar_left.php:219
 #: widgets/carousel_progressbar_left.php:252
 #: widgets/carousel_progressbar_left.php:284
@@ -114,12 +137,14 @@ msgstr "Progress Bar"
 #: widgets/history.php:263 widgets/history.php:328 widgets/history.php:360
 #: widgets/history.php:418 widgets/history.php:439
 #: widgets/image_title_description.php:305
-#: widgets/image_title_description.php:358
+#: widgets/image_title_description.php:358 widgets/vertical_carousel.php:267
+#: widgets/vertical_carousel.php:323 widgets/vertical_carousel.php:413
 msgid "Color"
 msgstr "Color"
 
-#: widgets/carousel_progressbar.php:369 widgets/carousel_progressbar.php:421
-#: widgets/carousel_progressbar.php:473
+#: widgets/carousel_progressbar.php:407 widgets/carousel_progressbar.php:440
+#: widgets/carousel_progressbar.php:472 widgets/carousel_progressbar.php:524
+#: widgets/carousel_progressbar.php:576
 #: widgets/carousel_progressbar_left.php:231
 #: widgets/carousel_progressbar_left.php:264
 #: widgets/carousel_progressbar_left.php:296
@@ -130,14 +155,25 @@ msgstr "Color"
 msgid "Background Color"
 msgstr "Background Color"
 
-#: widgets/carousel_progressbar.php:394
+#: widgets/carousel_progressbar.php:419
+#: widgets/carousel_progressbar_left.php:243 widgets/history.php:254
+msgid "Next Arrow"
+msgstr "Next Arrow"
+
+#: widgets/carousel_progressbar.php:452
+#: widgets/carousel_progressbar_left.php:276
+msgid "Progress Bar"
+msgstr "Progress Bar"
+
+#: widgets/carousel_progressbar.php:497
 #: widgets/carousel_progressbar_left.php:321 widgets/history.php:300
 #: widgets/image_title_description.php:157
-#: widgets/image_title_description.php:289
+#: widgets/image_title_description.php:289 widgets/vertical_carousel.php:149
+#: widgets/vertical_carousel.php:238
 msgid "Title"
 msgstr "Title"
 
-#: widgets/carousel_progressbar.php:432 widgets/carousel_progressbar.php:484
+#: widgets/carousel_progressbar.php:535 widgets/carousel_progressbar.php:587
 #: widgets/carousel_progressbar_left.php:359
 #: widgets/image_title_description.php:327
 #: widgets/image_title_description.php:380
@@ -147,14 +183,6 @@ msgstr "Padding"
 #: widgets/carousel_progressbar_left.php:67
 msgid "Carousel with ProgressBar Left"
 msgstr "Carousel with ProgressBar Left"
-
-#: widgets/carousel_progressbar_left.php:211 widgets/history.php:222
-msgid "Prev Arrow"
-msgstr "Prev Arrow"
-
-#: widgets/carousel_progressbar_left.php:243 widgets/history.php:254
-msgid "Next Arrow"
-msgstr "Next Arrow"
 
 #: widgets/history.php:67
 msgid "History"
@@ -177,13 +205,63 @@ msgid "Events"
 msgstr "Events"
 
 #: widgets/history.php:321 widgets/history.php:411
+#: widgets/vertical_carousel.php:260
 msgid "Normal"
 msgstr "Normal"
 
 #: widgets/history.php:353 widgets/history.php:432
+#: widgets/vertical_carousel.php:316
 msgid "Active"
 msgstr "Active"
 
 #: widgets/image_title_description.php:67
 msgid "Image with Title and Description"
 msgstr "Image with Title and Description"
+
+#: widgets/image_title_description.php:188
+msgid "Animation speed"
+msgstr "Animation speed"
+
+#: widgets/vertical_carousel.php:67
+msgid "Vertical Carousel"
+msgstr "Vertical Carousel"
+
+#: widgets/vertical_carousel.php:162
+msgid "Default description"
+msgstr "Default description"
+
+#: widgets/vertical_carousel.php:163
+msgid "Type your description here"
+msgstr "Type your description here"
+
+#: widgets/vertical_carousel.php:192
+msgid "Image Position"
+msgstr "Image Position"
+
+#: widgets/vertical_carousel.php:194
+msgid "Top"
+msgstr "Top"
+
+#: widgets/vertical_carousel.php:195
+msgid "Left"
+msgstr "Left"
+
+#: widgets/vertical_carousel.php:196
+msgid "Bottom"
+msgstr "Bottom"
+
+#: widgets/vertical_carousel.php:197
+msgid "Right"
+msgstr "HeightRight"
+
+#: widgets/vertical_carousel.php:279 widgets/vertical_carousel.php:335
+msgid "Icon Color"
+msgstr "Icon Color"
+
+#: widgets/vertical_carousel.php:291 widgets/vertical_carousel.php:347
+msgid "Icon Size"
+msgstr "Icon Size"
+
+#: widgets/vertical_carousel.php:374
+msgid "Icon Spacing"
+msgstr "Icon Spacing"

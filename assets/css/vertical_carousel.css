@@ -7,7 +7,7 @@
 /* ---- Slide Navigation ---- */
 
 .vertical-carousel-navigation {
-    width: calc(25% - 25px);
+    width: calc(35% - 25px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,12 +38,12 @@
 /* ---- Slide List ---- */
 
 .vertical-carousel-container .slides {
-    width: calc(75% - 25px);
+    width: calc(65% - 25px);
     position: relative;
 }
 
 .vertical-carousel-container .slide {
-    padding: 40px 60px;
+    padding: 40px 60px 90px 60px;
     opacity: 0;
     position: absolute;
     left: 0;
@@ -99,6 +99,10 @@
     border-top: 20px solid #687A82;
     border-bottom: 20px solid #687A82;
     border-right: 20px solid #687A82;
+}
+
+.vertical-carousel-container .slide-active .slide_image {
+    text-align: center;
 }
 
 .vertical-carousel-container .slide-active .slide_image,
