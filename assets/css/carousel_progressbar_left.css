@@ -9,6 +9,17 @@
     width: 50%;
 }
 
+@media screen and (max-width: 767px) {
+    .carousel-progressbar-left-container {
+        flex-direction: column-reverse;
+        row-gap: 24px;
+    }
+    .carousel-progressbar-left-navigation-container,
+    .carousel-progressbar-left-wrapper {
+        width: 100%;
+    }
+}
+
 
 /* ----- Carousel Navigation ----- */
 
@@ -47,6 +58,21 @@
     transition: left 0.5s;
 }
 
+@media screen and (max-width: 1024px) {
+    .carousel-progressbar-left-navigation-container .navigation {
+        padding-right: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-progressbar-left-navigation-container .navigation {
+        padding-right: 0;
+    }
+    .carousel-progressbar-left-navigation-container .navigation-arrows {
+        justify-content: space-between;
+    }
+}
+
 
 /* ----- Slide List ----- */
 
@@ -62,6 +88,7 @@
 .carousel-progressbar-left-wrapper .slide {
     flex-shrink: 0;
     width: 416px;
+    max-width: 100%;
     position: relative;
 }
 

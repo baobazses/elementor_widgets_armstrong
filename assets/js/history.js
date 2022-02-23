@@ -4,7 +4,8 @@
         let container = $scope.find('.history-events-container')[0];
 
         //set initial datas
-        let translateX = -440;
+        let translateX = 0;
+        let slideWidth = 0;
         let activeIndex = 0;
 
         //get arrows & event wrapper
@@ -21,30 +22,28 @@
         let historyEventsCount = historyEvent.length;
         if (historyEvent && historyEvent.length > 1) {
             //cloned elements to infinity loop
-            let clonedFirst = historyEvent[0].cloneNode(true);
-            clonedFirst.className = '';
-            clonedFirst.className = "history-event history-event-firstlast";
-            let title = clonedFirst.querySelector('.title');
-            title.classList.remove('title-active');
-            let description = clonedFirst.querySelector('.description');
-            description.classList.remove('description-active');
+            slideWidth = historyEvent[0].offsetWidth + 24;
+            translateX = -slideWidth;
 
-            let clonedSecond = historyEvent[1].cloneNode(true);
-            let clonedThird = clonedFirst.cloneNode(true);
-            if (historyEvent.length > 2) {
-                clonedThird = historyEvent[2].cloneNode(true);
-            }
-            clonedSecond.className = '';
-            clonedSecond.className = "history-event history-event-secondlast";
-            clonedThird.className = '';
-            clonedThird.className = "history-event history-event-thirdlast";
+            let slidesWidth = 0;
+            let slideId = 0;
             let clonedLast = historyEvent[historyEventsCount - 1].cloneNode(true);
+            while (slidesWidth < container.offsetWidth) {
+                let cloned = historyEvent[0].cloneNode(true);
+                if (historyEvent.length > slideId) {
+                    cloned = historyEvent[slideId].cloneNode(true);
+                }
+                if (slideId == 0) {
+                    cloned.className = '';
+                    cloned.className = "history-event history-event-firstlast";
+                }
+                historyEvents.appendChild(cloned);
+                slidesWidth += slideWidth;
+                slideId++;
+            }
+
             clonedLast.className = '';
             clonedLast.className = "history-event history-event-newfirst";
-
-            historyEvents.appendChild(clonedFirst);
-            historyEvents.appendChild(clonedSecond);
-            historyEvents.appendChild(clonedThird);
             historyEvents.insertBefore(clonedLast, historyEvents.firstChild);
 
             historyEvents.style.transform = 'translateX(' + translateX + 'px)';
@@ -53,7 +52,7 @@
             prevArrow.addEventListener('click', function() {
                 //change event showed
                 historyEvents.style.transition = "transform 1s";
-                translateX += 440;
+                translateX += slideWidth;
                 activeIndex--;
                 historyEvents.style.transform = 'translateX(' + translateX + 'px)';
 
@@ -69,7 +68,7 @@
                 //if return to the start of events, new current is the last
                 if (activeIndex < 0) {
                     activeIndex = historyEventsCount - 1;
-                    translateX = -(440 * (activeIndex + 1));
+                    translateX = -(slideWidth * (activeIndex + 1));
                     currentHistoryEvent = container.querySelector('.history-event-newfirst');
                 }
 
@@ -98,7 +97,7 @@
             nextArrow.addEventListener('click', function() {
                 //change event showed
                 historyEvents.style.transition = "transform 1s";
-                translateX -= 440;
+                translateX -= slideWidth;
                 activeIndex++;
                 historyEvents.style.transform = 'translateX(' + translateX + 'px)';
 
@@ -115,7 +114,7 @@
                 //if next is after last event, new current is the first
                 if (activeIndex >= historyEventsCount) {
                     activeIndex = 0;
-                    translateX = -440;
+                    translateX = -slideWidth;
                     currentHistoryEvent = container.querySelector('.history-event-firstlast');
                 }
 

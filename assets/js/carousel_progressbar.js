@@ -77,7 +77,7 @@
                     activeIndex = 0;
                     translateX = -slideWidth;
                 }
-                progressBar.style.left = Math.round((100 / slidesCount) * activeIndex) + '%';
+                progressBar.style.left = (100 / slidesCount) * activeIndex + '%';
 
                 setTimeout(function() {
                     slidesContainer.style.transition = "transform 0ms";
@@ -102,7 +102,7 @@
                         activeIndex = 0;
                         translateX = 0;
                     }
-                    progressBar.style.left = Math.round((100 / slidesCount) * activeIndex) + '%';
+                    progressBar.style.left = (100 / slidesCount) * activeIndex + '%';
 
                     setTimeout(function() {
                         slidesContainer.style.transition = "transform 0ms";

@@ -31,6 +31,7 @@
 .history-event {
     flex-shrink: 0;
     width: 416px;
+    max-width: 100%;
 }
 
 .history-events .title {
@@ -46,4 +47,16 @@
 .history-events .image img {
     width: 416px;
     height: 302px;
+}
+
+@media screen and (max-width: 767px) {
+    .history-navigation {
+        z-index: 10;
+    }
+    .history-events-wrapper {
+        margin: 0;
+    }
+    .history-events .title {
+        margin-left: 75px;
+    }
 }
