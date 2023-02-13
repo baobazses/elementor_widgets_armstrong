@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Elementor Armstrong\n"
-"POT-Creation-Date: 2022-02-21 14:59+0100\n"
-"PO-Revision-Date: 2022-02-21 14:59+0100\n"
+"POT-Creation-Date: 2023-02-13 17:09+0100\n"
+"PO-Revision-Date: 2023-02-13 17:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_GB\n"
@@ -10,12 +10,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: widgets-register.php:148
+#: widgets-register.php:159
 msgid "Armstrong"
 msgstr "Armstrong"
 
@@ -26,8 +26,10 @@ msgstr "Carousel with ProgressBar"
 #: widgets/carousel_progressbar.php:138 widgets/carousel_progressbar.php:488
 #: widgets/carousel_progressbar_left.php:138
 #: widgets/carousel_progressbar_left.php:312 widgets/history.php:138
-#: widgets/history.php:291 widgets/image_title_description.php:138
-#: widgets/image_title_description.php:280 widgets/vertical_carousel.php:138
+#: widgets/history.php:194 widgets/i-am.php:139
+#: widgets/image_title_description.php:138
+#: widgets/image_title_description.php:280 widgets/organization-chart.php:135
+#: widgets/organization-chart.php:350 widgets/vertical_carousel.php:138
 #: widgets/vertical_carousel.php:159 widgets/vertical_carousel.php:229
 msgid "Content"
 msgstr "Content"
@@ -43,14 +45,15 @@ msgid "Title second line"
 msgstr "Title second line"
 
 #: widgets/carousel_progressbar.php:169 widgets/carousel_progressbar.php:548
-#: widgets/history.php:181 widgets/history.php:389
+#: widgets/history.php:160 widgets/history.php:351
 #: widgets/image_title_description.php:167
 #: widgets/image_title_description.php:341 widgets/vertical_carousel.php:396
+#: widgets/we-can-do.php:249 widgets/we-can-do.php:417
 msgid "Description"
 msgstr "Description"
 
 #: widgets/carousel_progressbar.php:179 widgets/carousel_progressbar.php:292
-#: widgets/carousel_progressbar_left.php:169 widgets/history.php:160
+#: widgets/carousel_progressbar_left.php:169
 #: widgets/image_title_description.php:146
 #: widgets/image_title_description.php:208 widgets/vertical_carousel.php:170
 msgid "Image"
@@ -118,12 +121,12 @@ msgid "Rotate"
 msgstr "Rotate"
 
 #: widgets/carousel_progressbar.php:379
-#: widgets/carousel_progressbar_left.php:203 widgets/history.php:214
+#: widgets/carousel_progressbar_left.php:203
 msgid "Navigation"
 msgstr "Navigation"
 
 #: widgets/carousel_progressbar.php:387
-#: widgets/carousel_progressbar_left.php:211 widgets/history.php:222
+#: widgets/carousel_progressbar_left.php:211
 msgid "Prev Arrow"
 msgstr "Prev Arrow"
 
@@ -133,12 +136,21 @@ msgstr "Prev Arrow"
 #: widgets/carousel_progressbar_left.php:219
 #: widgets/carousel_progressbar_left.php:252
 #: widgets/carousel_progressbar_left.php:284
-#: widgets/carousel_progressbar_left.php:337 widgets/history.php:230
-#: widgets/history.php:263 widgets/history.php:328 widgets/history.php:360
-#: widgets/history.php:418 widgets/history.php:439
+#: widgets/carousel_progressbar_left.php:337 widgets/history.php:231
+#: widgets/history.php:263 widgets/history.php:313 widgets/history.php:334
+#: widgets/history.php:380 widgets/history.php:401 widgets/i-am.php:234
+#: widgets/i-am.php:276 widgets/i-am.php:318
 #: widgets/image_title_description.php:305
-#: widgets/image_title_description.php:358 widgets/vertical_carousel.php:267
+#: widgets/image_title_description.php:358 widgets/organization-chart.php:387
+#: widgets/organization-chart.php:408 widgets/organization-chart.php:453
+#: widgets/organization-chart.php:474 widgets/organization-chart.php:519
+#: widgets/organization-chart.php:540 widgets/organization-chart.php:585
+#: widgets/organization-chart.php:606 widgets/organization-chart.php:651
+#: widgets/organization-chart.php:672 widgets/organization-chart.php:717
+#: widgets/organization-chart.php:738 widgets/vertical_carousel.php:267
 #: widgets/vertical_carousel.php:323 widgets/vertical_carousel.php:413
+#: widgets/we-can-do.php:298 widgets/we-can-do.php:383
+#: widgets/we-can-do.php:405 widgets/we-can-do.php:434
 msgid "Color"
 msgstr "Color"
 
@@ -149,14 +161,15 @@ msgstr "Color"
 #: widgets/carousel_progressbar_left.php:264
 #: widgets/carousel_progressbar_left.php:296
 #: widgets/carousel_progressbar_left.php:348 widgets/history.php:242
-#: widgets/history.php:275 widgets/history.php:339 widgets/history.php:372
-#: widgets/image_title_description.php:316
-#: widgets/image_title_description.php:369
+#: widgets/history.php:275 widgets/i-am.php:245 widgets/i-am.php:287
+#: widgets/i-am.php:329 widgets/image_title_description.php:316
+#: widgets/image_title_description.php:369 widgets/organization-chart.php:304
+#: widgets/organization-chart.php:327 widgets/we-can-do.php:309
 msgid "Background Color"
 msgstr "Background Color"
 
 #: widgets/carousel_progressbar.php:419
-#: widgets/carousel_progressbar_left.php:243 widgets/history.php:254
+#: widgets/carousel_progressbar_left.php:243
 msgid "Next Arrow"
 msgstr "Next Arrow"
 
@@ -166,10 +179,11 @@ msgid "Progress Bar"
 msgstr "Progress Bar"
 
 #: widgets/carousel_progressbar.php:497
-#: widgets/carousel_progressbar_left.php:321 widgets/history.php:300
+#: widgets/carousel_progressbar_left.php:321 widgets/history.php:203
 #: widgets/image_title_description.php:157
 #: widgets/image_title_description.php:289 widgets/vertical_carousel.php:149
-#: widgets/vertical_carousel.php:238
+#: widgets/vertical_carousel.php:238 widgets/we-can-do.php:214
+#: widgets/we-can-do.php:217 widgets/we-can-do.php:365
 msgid "Title"
 msgstr "Title"
 
@@ -192,7 +206,7 @@ msgstr "History"
 msgid "Date"
 msgstr "Date"
 
-#: widgets/history.php:183 widgets/image_title_description.php:169
+#: widgets/history.php:162 widgets/image_title_description.php:169
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
 "luctus nec ullamcorper mattis, pulvinar dapibus leo."
@@ -200,19 +214,67 @@ msgstr ""
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, "
 "luctus nec ullamcorper mattis, pulvinar dapibus leo."
 
-#: widgets/history.php:191
+#: widgets/history.php:170
 msgid "Events"
 msgstr "Events"
 
-#: widgets/history.php:321 widgets/history.php:411
-#: widgets/vertical_carousel.php:260
+#: widgets/history.php:224 widgets/history.php:306 widgets/history.php:373
+#: widgets/organization-chart.php:297 widgets/organization-chart.php:380
+#: widgets/organization-chart.php:446 widgets/organization-chart.php:512
+#: widgets/organization-chart.php:578 widgets/organization-chart.php:644
+#: widgets/organization-chart.php:710 widgets/vertical_carousel.php:260
 msgid "Normal"
 msgstr "Normal"
 
-#: widgets/history.php:353 widgets/history.php:432
+#: widgets/history.php:256 widgets/history.php:327 widgets/history.php:394
 #: widgets/vertical_carousel.php:316
 msgid "Active"
 msgstr "Active"
+
+#: widgets/history.php:292 widgets/we-can-do.php:395
+msgid "Separator"
+msgstr "Separator"
+
+#: widgets/i-am.php:67
+msgid "I am"
+msgstr "I am"
+
+#: widgets/i-am.php:151 widgets/i-am.php:154 widgets/organization-chart.php:424
+#: widgets/we-can-do.php:149 widgets/we-can-do.php:152
+msgid "Name"
+msgstr "Name"
+
+#: widgets/i-am.php:162
+msgid "Link"
+msgstr "Link"
+
+#: widgets/i-am.php:164
+msgid "https://your-link.com"
+msgstr "https://your-link.com"
+
+#: widgets/i-am.php:182 widgets/we-can-do.php:138 widgets/we-can-do.php:171
+msgid "Profils"
+msgstr "Profils"
+
+#: widgets/i-am.php:201
+msgid "Button Text"
+msgstr "Button Text"
+
+#: widgets/i-am.php:204
+msgid "Submit"
+msgstr "Submit"
+
+#: widgets/i-am.php:218
+msgid "I am bloc"
+msgstr "I am bloc"
+
+#: widgets/i-am.php:260
+msgid "Select"
+msgstr "Select"
+
+#: widgets/i-am.php:302
+msgid "Button"
+msgstr "Button"
 
 #: widgets/image_title_description.php:67
 msgid "Image with Title and Description"
@@ -221,6 +283,77 @@ msgstr "Image with Title and Description"
 #: widgets/image_title_description.php:188
 msgid "Animation speed"
 msgstr "Animation speed"
+
+#: widgets/organization-chart.php:67
+msgid "Organization Chart"
+msgstr "Organization Chart"
+
+#: widgets/organization-chart.php:147
+msgid "Photo"
+msgstr "Photo"
+
+#: widgets/organization-chart.php:155 widgets/organization-chart.php:359
+msgid "Heading"
+msgstr "Heading"
+
+#: widgets/organization-chart.php:165
+msgid "Firstname Name"
+msgstr "Firstname Name"
+
+#: widgets/organization-chart.php:176 widgets/organization-chart.php:490
+msgid "Company"
+msgstr "Company"
+
+#: widgets/organization-chart.php:187 widgets/organization-chart.php:556
+msgid "Phone"
+msgstr "Phone"
+
+#: widgets/organization-chart.php:197
+msgid "Mobile Phone"
+msgstr "Mobile Phone"
+
+#: widgets/organization-chart.php:207 widgets/organization-chart.php:622
+msgid "Email"
+msgstr "Email"
+
+#: widgets/organization-chart.php:217 widgets/organization-chart.php:688
+msgid "Website"
+msgstr "Website"
+
+#: widgets/organization-chart.php:227
+msgid "Website Link"
+msgstr "Website Link"
+
+#: widgets/organization-chart.php:237
+msgid "Members"
+msgstr "Members"
+
+#: widgets/organization-chart.php:254
+msgid "Show Members photos"
+msgstr "Show Members photos"
+
+#: widgets/organization-chart.php:256
+msgid "Show"
+msgstr "Show"
+
+#: widgets/organization-chart.php:257
+msgid "Hide"
+msgstr "Hide"
+
+#: widgets/organization-chart.php:271
+msgid "Box"
+msgstr "Box"
+
+#: widgets/organization-chart.php:280
+msgid "Color of the background"
+msgstr "Color of the background"
+
+#: widgets/organization-chart.php:320 widgets/organization-chart.php:401
+#: widgets/organization-chart.php:467 widgets/organization-chart.php:533
+#: widgets/organization-chart.php:599 widgets/organization-chart.php:665
+#: widgets/organization-chart.php:731
+msgid "Hover"
+msgstr "Hover"
 
 #: widgets/vertical_carousel.php:67
 msgid "Vertical Carousel"
@@ -259,9 +392,50 @@ msgid "Icon Color"
 msgstr "Icon Color"
 
 #: widgets/vertical_carousel.php:291 widgets/vertical_carousel.php:347
+#: widgets/we-can-do.php:341
 msgid "Icon Size"
 msgstr "Icon Size"
 
 #: widgets/vertical_carousel.php:374
 msgid "Icon Spacing"
 msgstr "Icon Spacing"
+
+#: widgets/we-can-do.php:67
+msgid "We can do for you"
+msgstr "We can do for you"
+
+#: widgets/we-can-do.php:160
+msgid "Slug"
+msgstr "Slug"
+
+#: widgets/we-can-do.php:163 widgets/we-can-do.php:206
+msgid "name"
+msgstr "name"
+
+#: widgets/we-can-do.php:192 widgets/we-can-do.php:259
+msgid "Arguments"
+msgstr "Arguments"
+
+#: widgets/we-can-do.php:203
+msgid "Profil Slug"
+msgstr "Profil Slug"
+
+#: widgets/we-can-do.php:225 widgets/we-can-do.php:333
+msgid "Icon"
+msgstr "Icon"
+
+#: widgets/we-can-do.php:251
+msgid ""
+"Fringilla a id id ut vel accumsan arcu ut. Vestibulum nunc scelerisque ac "
+"eget sit ac."
+msgstr ""
+"Fringilla a id id ut vel accumsan arcu ut. Vestibulum nunc scelerisque ac "
+"eget sit ac."
+
+#: widgets/we-can-do.php:282
+msgid "Profile"
+msgstr "Profile"
+
+#: widgets/we-can-do.php:324
+msgid "Argument"
+msgstr "Argument"

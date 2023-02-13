@@ -13,8 +13,9 @@
         let nextArrow = container.querySelector('.next-arrow');
         let historyEvents = container.querySelector('.history-events');
 
-        //get all titles & descriptions
+        //get all titles, separators & descriptions
         let titles = container.getElementsByClassName('title');
+        let separators = container.getElementsByClassName('separator');
         let descriptions = container.getElementsByClassName('description');
 
         //get all events
@@ -22,7 +23,7 @@
         let historyEventsCount = historyEvent.length;
         if (historyEvent && historyEvent.length > 1) {
             //cloned elements to infinity loop
-            slideWidth = historyEvent[0].offsetWidth + 24;
+            slideWidth = historyEvent[0].offsetWidth + 30;
             translateX = -slideWidth;
 
             let slidesWidth = 0;
@@ -56,14 +57,17 @@
                 activeIndex--;
                 historyEvents.style.transform = 'translateX(' + translateX + 'px)';
 
-                //remove all titles & description active
+                //remove all titles, separators & description active
                 for (let title of titles) {
                     title.classList.remove('title-active');
+                }
+                for (let separator of separators) {
+                    separator.classList.remove('separator-active');
                 }
                 for (let description of descriptions) {
                     description.classList.remove('description-active');
                 }
-                //set title & description active to new current
+                //set title, separator & description active to new current
                 let currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
                 //if return to the start of events, new current is the last
                 if (activeIndex < 0) {
@@ -74,21 +78,28 @@
 
                 let title = currentHistoryEvent.querySelector('.title');
                 title.classList.add('title-active');
+                let separator = currentHistoryEvent.querySelector('.separator');
+                separator.classList.add('separator-active');
                 let description = currentHistoryEvent.querySelector('.description');
                 description.classList.add('description-active');
 
+                if (activeIndex == historyEventsCount - 1) {
+                    currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
+
+                    title = currentHistoryEvent.querySelector('.title');
+                    title.classList.add('title-active');
+
+                    separator = currentHistoryEvent.querySelector('.separator');
+                    separator.classList.add('separator-active');
+
+                    description = currentHistoryEvent.querySelector('.description');
+                    description.classList.add('description-active');
+                }
                 setTimeout(function() {
                     historyEvents.style.transition = "transform 0ms";
                     //after transition, return to last element for infinity loop
                     if (activeIndex == historyEventsCount - 1) {
                         historyEvents.style.transform = 'translateX(' + translateX + 'px)';
-
-                        let currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
-                        let title = currentHistoryEvent.querySelector('.title');
-                        title.classList.add('title-active');
-
-                        let description = currentHistoryEvent.querySelector('.description');
-                        description.classList.add('description-active');
                     }
                 }, 1000)
             })
@@ -101,15 +112,18 @@
                 activeIndex++;
                 historyEvents.style.transform = 'translateX(' + translateX + 'px)';
 
-                //remove all titles & description active
+                //remove all titles, separator & description active
                 for (let title of titles) {
                     title.classList.remove('title-active');
+                }
+                for (let separator of separators) {
+                    separator.classList.remove('separator-active');
                 }
                 for (let description of descriptions) {
                     description.classList.remove('description-active');
                 }
 
-                //set title & description active to new current
+                //set title, separator & description active to new current
                 let currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
                 //if next is after last event, new current is the first
                 if (activeIndex >= historyEventsCount) {
@@ -120,20 +134,29 @@
 
                 let title = currentHistoryEvent.querySelector('.title');
                 title.classList.add('title-active');
+                let separator = currentHistoryEvent.querySelector('.separator');
+                separator.classList.add('separator-active');
                 let description = currentHistoryEvent.querySelector('.description');
                 description.classList.add('description-active');
+
+                if (activeIndex == 0) {;
+                    currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
+
+                    title = currentHistoryEvent.querySelector('.title');
+                    title.classList.add('title-active');
+
+                    separator = currentHistoryEvent.querySelector('.separator');
+                    separator.classList.add('separator-active');
+
+                    description = currentHistoryEvent.querySelector('.description');
+                    description.classList.add('description-active');
+                }
 
                 setTimeout(function() {
                     historyEvents.style.transition = "transform 0ms";
                     //after transition, return to first element for infinity loop
                     if (activeIndex == 0) {
                         historyEvents.style.transform = 'translateX(' + translateX + 'px)';
-                        let currentHistoryEvent = container.querySelector('.history-event-' + activeIndex);
-                        let title = currentHistoryEvent.querySelector('.title');
-                        title.classList.add('title-active');
-
-                        let description = currentHistoryEvent.querySelector('.description');
-                        description.classList.add('description-active');
                     }
                 }, 1000)
             })

@@ -1,0 +1,124 @@
+/* ----- Select ---- */
+
+.we-can-do .select-wrapper {
+    margin-bottom: 60px;
+}
+
+.we-can-do .select-wrapper select.profile_title {
+    padding: 12px 45px 12px 12px!important;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    border-radius: 0;
+    /* arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../icons/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    background-size: 21px;
+}
+
+@media screen and (max-width: 767px) {
+    .we-can-do .select-wrapper select.profile_title {
+        width: 100%;
+    }
+}
+
+
+/* ----- Arguments List ---- */
+
+.arguments-wrapper {
+    display: none;
+    column-gap: 53px;
+    row-gap: 45px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.arguments-wrapper.active {
+    display: flex;
+}
+
+.arguments-wrapper .argument {
+    width: 395px;
+}
+
+.arguments-wrapper .argument .argument_icon {
+    margin-bottom: 12px;
+}
+
+.arguments-wrapper .argument .argument_title {
+    margin-bottom: 8px;
+}
+
+.arguments-wrapper .argument .argument_separator {
+    width: 55px;
+    height: 2px;
+    margin-bottom: 25px;
+}
+
+.arguments-wrapper .argument .argument_description p {
+    margin-bottom: 0;
+}
+
+.arguments-wrapper .argument .argument_description ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+    text-align: left!important;
+}
+
+.arguments-wrapper .argument .argument_description ul li {
+    padding-left: 23px;
+    position: relative;
+}
+
+.arguments-wrapper .argument .argument_description ul li::before {
+    content: '';
+    height: 5px;
+    width: 5px;
+    background: var(--e-global-color-secondary);
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 10px;
+    left: 5px;
+}
+
+.arguments-wrapper .argument .argument_description ol ul li::before,
+.arguments-wrapper .argument .argument_description ul ul li::before {
+    background: var(--e-global-color-primary);
+    transform: initial;
+}
+
+.arguments-wrapper .argument .argument_description ol {
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+
+.arguments-wrapper .argument .argument_description ol li {
+    padding-left: 6px;
+}
+
+.arguments-wrapper .argument .argument_description ol li::marker {
+    color: var(--e-global-color-secondary);
+}
+
+.arguments-wrapper .argument .argument_description ol ol li::marker {
+    color: var(--e-global-color-secondary);
+}
+
+@media screen and (max-width: 1024px) {
+    .arguments-wrapper .argument {
+        width: calc(50% - 28px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .arguments-wrapper .argument {
+        width: 100%;
+    }
+}

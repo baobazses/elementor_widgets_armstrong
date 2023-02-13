@@ -129,14 +129,14 @@ class History extends Widget_Base
      *
      * @access protected
      */
-    protected function _register_controls()
+    protected function register_controls()
     {
         /* --------- START CONTENT TAB --------- */
         $this->start_controls_section(
             'content_section',
             [
                 'label' => __('Content', 'elementor-armstrong'),
-                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+                'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
 
@@ -147,7 +147,7 @@ class History extends Widget_Base
             'event_date',
             [
                 'label' => __('Date', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::TEXT,
+                'type' => Controls_Manager::TEXT,
                 'label_block' => true,
                 'placeholder' => date('Y'),
                 'default' => date('Y'),
@@ -155,31 +155,10 @@ class History extends Widget_Base
         );
 
         $repeater->add_control(
-            'event_image',
-            [
-                'label' => __('Image', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
-                ],
-            ]
-        );
-
-        $repeater->add_group_control(
-            \Elementor\Group_Control_Image_Size::get_type(),
-            [
-                'name' => 'thumbnail', // Usage: `{name}_size` and `{name}_custom_dimension`, in this case `thumbnail_size` and `thumbnail_custom_dimension`.
-                'exclude' => [],
-                'include' => [],
-                'default' => 'medium-large',
-            ]
-        );
-
-        $repeater->add_control(
             'event_description',
             [
                 'label' => __('Description', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::WYSIWYG,
+                'type' => Controls_Manager::WYSIWYG,
                 'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'elementor-armstrong'),
                 'label_block' => true,
             ]
@@ -189,7 +168,7 @@ class History extends Widget_Base
             'events',
             [
                 'label' => __('Events', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::REPEATER,
+                'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
@@ -207,89 +186,13 @@ class History extends Widget_Base
         $this->end_controls_section();
         /* --------- END CONTENT TAB --------- */
 
-        /* --------- START NAVIGATION STYLE TAB --------- */
-        $this->start_controls_section(
-            'navigation_style_section',
-            [
-                'label' => __('Navigation', 'elementor-armstrong'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'prev_arrow_heading',
-            [
-                'label' => __('Prev Arrow', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::HEADING,
-            ]
-        );
-
-        $this->add_control(
-            'prev_arrow_color',
-            [
-                'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#FFFFFF',
-                'selectors' => [
-                    '{{WRAPPER}} .prev-arrow' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'prev_arrow_background_color',
-            [
-                'label' => __('Background Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .prev-arrow' => 'background-color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'next_arrow_heading',
-            [
-                'label' => __('Next Arrow', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before'
-            ]
-        );
-
-        $this->add_control(
-            'next_arrow_color',
-            [
-                'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#FFFFFF',
-                'selectors' => [
-                    '{{WRAPPER}} .next-arrow' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'next_arrow_background_color',
-            [
-                'label' => __('Background Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#000000',
-                'selectors' => [
-                    '{{WRAPPER}} .next-arrow' => 'background-color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-        /* --------- END NAVIGATION STYLE TAB --------- */
 
         /* --------- START CONTENT STYLE TAB --------- */
         $this->start_controls_section(
             'content_style_section',
             [
                 'label' => __('Content', 'elementor-armstrong'),
-                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+                'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
@@ -298,7 +201,7 @@ class History extends Widget_Base
             'title_heading',
             [
                 'label' => __('Title', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::HEADING,
+                'type' => Controls_Manager::HEADING,
             ]
         );
 
@@ -326,7 +229,7 @@ class History extends Widget_Base
             'title_color',
             [
                 'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title' => 'color: {{VALUE}}',
                 ],
@@ -337,7 +240,7 @@ class History extends Widget_Base
             'title_background_color',
             [
                 'label' => __('Background Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .title' => 'background-color: {{VALUE}}',
                 ],
@@ -358,7 +261,7 @@ class History extends Widget_Base
             'title_active_color',
             [
                 'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'type' => Controls_Manager::COLOR,
                 'default' => '#FFFFFF',
                 'selectors' => [
                     '{{WRAPPER}} .title-active' => 'color: {{VALUE}}',
@@ -370,8 +273,8 @@ class History extends Widget_Base
             'title_active_background_color',
             [
                 'label' => __('Background Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#000000',
+                'type' => Controls_Manager::COLOR,
+                'default' => '#FF70E6',
                 'selectors' => [
                     '{{WRAPPER}} .title-active' => 'background-color: {{VALUE}}',
                 ],
@@ -384,10 +287,69 @@ class History extends Widget_Base
         /* --------- END TITLE COLOR TABS --------- */
 
         $this->add_control(
+            'separator_heading',
+            [
+                'label' => __('Separator', 'elementor-armstrong'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
+
+        /* --------- START SEPARATOR COLOR TABS --------- */
+        $this->start_controls_tabs(
+            'separator_color_tabs'
+        );
+        /* ---- normal tab ---- */
+        $this->start_controls_tab(
+            'separator_color_normal_tab',
+            [
+                'label' => __('Normal', 'elementor-armstrong'),
+            ]
+        );
+
+        $this->add_control(
+            'separator_color',
+            [
+                'label' => __('Color', 'elementor-armstrong'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .separator' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+        /* ---- END normal tab ---- */
+        /* ---- active tab ---- */
+        $this->start_controls_tab(
+            'separator_color_active_tab',
+            [
+                'label' => __('Active', 'elementor-armstrong'),
+            ]
+        );
+
+        $this->add_control(
+            'separator_active_color',
+            [
+                'label' => __('Color', 'elementor-armstrong'),
+                'type' => Controls_Manager::COLOR,
+                'default' => '#FFF2ED',
+                'selectors' => [
+                    '{{WRAPPER}} .separator-active' => 'background-color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_tab();
+        /* ---- END active tab ---- */
+        $this->end_controls_tabs();
+        /* --------- END DESCRIPTION COLOR TABS --------- */
+
+        $this->add_control(
             'description_heading',
             [
                 'label' => __('Description', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::HEADING,
+                'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
         );
@@ -416,7 +378,7 @@ class History extends Widget_Base
             'description_color',
             [
                 'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
+                'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .description' => 'color: {{VALUE}}',
                 ],
@@ -437,8 +399,8 @@ class History extends Widget_Base
             'description_active_color',
             [
                 'label' => __('Color', 'elementor-armstrong'),
-                'type' => \Elementor\Controls_Manager::COLOR,
-                'default' => '#687A82',
+                'type' => Controls_Manager::COLOR,
+                'default' => '#000000',
                 'selectors' => [
                     '{{WRAPPER}} .description-active' => 'color: {{VALUE}}',
                 ],
@@ -473,11 +435,11 @@ class History extends Widget_Base
 ?>
                 <div class="history-navigation">
                     <div class="history-arrow prev-arrow" role="button" aria-label="Previous slide">
-                        <i aria-hidden="true" class="eicon-chevron-left"></i>
+                        <div class="pagination-prev"></div>
                         <span class="elementor-screen-only">Précédent</span>
                     </div>
                     <div class="history-arrow next-arrow" role="button" aria-label="Next slide">
-                        <i aria-hidden="true" class="eicon-chevron-right"></i>
+                        <div class="pagination-next"></div>
                         <span class="elementor-screen-only">Suivant</span>
                     </div>
                 </div>
@@ -492,9 +454,7 @@ class History extends Widget_Base
                     <div class="title <?= $id == 0 ? 'title-active' : '' ?>">
                         <?= $item['event_date'] ?>
                     </div>
-                    <div class="image">
-                        <?= \Elementor\Group_Control_Image_Size::get_attachment_image_html($item, 'thumbnail', 'event_image'); ?>
-                    </div>
+                    <div class="separator <?= $id == 0 ? 'separator-active' : '' ?>"></div>
                     <div class="description <?= $id == 0 ? 'description-active' : '' ?>">
                         <?= $item['event_description'] ?>
                     </div>
@@ -538,20 +498,17 @@ class History extends Widget_Base
                             <div class="history-events-wrapper">
                                 <div class="history-events">
                                     <# _.each( settings.events, function( item ) { #>
-                                        <# var image={ id: item.event_image.id, url: item.event_image.url, size: item.thumbnail_size, dimension: item.thumbnail_custom_dimension, model: view.getEditModel() }; var image_url=elementor.imagesManager.getImageUrl( image ); #>
-                                            <div class="history-event history-event-{{{ id }}}">
-                                                <div class="title {{{ id == 0 ? 'title-active' : '' }}}">
-                                                    {{{ item.event_date }}}
-                                                </div>
-                                                <div class="image">
-                                                    <img src="{{{ image_url }}}" />
-                                                </div>
-                                                <div class="description {{{ id == 0 ? 'description-active' : '' }}}">
-                                                    {{{ item.event_description }}}
-                                                </div>
+                                        <div class="history-event history-event-{{{ id }}}">
+                                            <div class="title {{{ id == 0 ? 'title-active' : '' }}}">
+                                                {{{ item.event_date }}}
                                             </div>
-                                            <# id++ #>
-                                                <# }); #>
+                                            <div class="separator {{{ id == 0 ? 'separator-active' : '' }}}"></div>
+                                            <div class="description {{{ id == 0 ? 'description-active' : '' }}}">
+                                                {{{ item.event_description }}}
+                                            </div>
+                                        </div>
+                                        <# id++ #>
+                                            <# }); #>
                                 </div>
                             </div>
             </div>

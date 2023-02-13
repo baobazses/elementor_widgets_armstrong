@@ -1,0 +1,110 @@
+/* ----- I am Block ---- */
+
+.iam_container .iam_bloc {
+    width: fit-content;
+    padding: 10px;
+    margin-left: 26px;
+    transform: rotate(-6deg);
+}
+
+
+/* ----- Select ---- */
+
+.iam_container .select-wrapper {
+    margin-top: -20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iam_container .iam_select {
+    width: 70%;
+    padding: 18px 75px 18px 31px!important;
+    border: 0;
+    border-radius: 0;
+    /* arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../icons/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 22px) center;
+    background-size: 29px;
+}
+
+@media screen and (max-width: 1024px) {
+    .iam_container .iam_button {
+        padding: 19px 53px 19px 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .iam_container .select-wrapper {
+        margin-top: -10px;
+    }
+    .iam_container .iam_select {
+        padding: 14px 49px 14px 10px!important;
+        width: 100%;
+        background-position: calc(100% - 10px) center;
+    }
+}
+
+
+/* ----- Button ---- */
+
+.iam_container .iam_button {
+    width: 30%;
+    text-align: center;
+    padding: 24px 79px;
+    border: 0;
+    position: relative;
+}
+
+.iam_container .iam_button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transition: all .35s ease-out;
+    border-top: 0px solid var(--e-global-color-primary);
+    border-right: 0px solid transparent;
+    border-bottom: 0;
+    border-left: 0;
+}
+
+.iam_container .iam_button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    transition: all .35s ease-out;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0px solid var(--e-global-color-primary);
+    border-left: 0px solid transparent;
+}
+
+.iam_container .iam_button:hover:before {
+    border-top-width: 24px;
+    border-right-width: 24px;
+}
+
+.iam_container .iam_button:hover:after {
+    border-bottom-width: 24px;
+    border-left-width: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+    .iam_container .iam_button {
+        padding: 15px 45px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .iam_container .iam_button {
+        width: 100%;
+    }
+}

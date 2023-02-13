@@ -42,6 +42,14 @@
     transition: width 500ms, height 500ms, color 500ms;
 }
 
+.vertical-carousel-navigation .slidetitle_container:hover .slidetitle_icon {
+    background-color: #F05332;
+}
+
+.vertical-carousel-navigation .slidetitle_container:hover .slidetitle {
+    color: #121842;
+}
+
 @media screen and (max-width: 767px) {
     .vertical-carousel-navigation {
         width: 70%;
