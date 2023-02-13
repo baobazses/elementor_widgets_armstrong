@@ -1,0 +1,49 @@
+/* ----- Navigation ---- */
+
+.history-with-image-navigation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.history-with-image-arrow {
+    font-size: 30px;
+    display: inline-flex;
+    padding: 13px;
+}
+
+
+/* ----- Events ---- */
+
+.history-with-image-events-wrapper {
+    overflow: hidden;
+    margin: 0 75px 0 75px;
+    padding-top: 18px;
+}
+
+.history-with-image-events {
+    display: flex;
+    column-gap: 24px;
+}
+
+.history-with-image-event {
+    flex-shrink: 0;
+    width: 416px;
+}
+
+.history-with-image-events .title {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+}
+
+.history-with-image-events .image {
+    margin-bottom: 25px;
+}
+
+.history-with-image-events .image img {
+    width: 416px;
+    height: 302px;
+}

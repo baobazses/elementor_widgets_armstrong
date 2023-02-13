@@ -69,6 +69,7 @@ class Widgets
 	private function include_widgets_files()
 	{
 		require_once 'widgets/history.php';
+		require_once 'widgets/history_with_image.php';
 		require_once 'widgets/i-am.php';
 		require_once 'widgets/organization-chart.php';
 		require_once 'widgets/we-can-do.php';
@@ -93,6 +94,7 @@ class Widgets
 
 		// Register the plugin widget classes.
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\History());
+		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\HistoryWithImage());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\OrganizationChart());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\IAm());
 		\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Widgets\WeCanDo());
@@ -114,6 +116,7 @@ class Widgets
 	public function widget_styles()
 	{
 		wp_register_style('history-style', plugins_url('assets/css/history.css', __FILE__));
+		wp_register_style('history-with-image-style', plugins_url('assets/css/history_with_image.css', __FILE__));
 		wp_register_style('i-am-style', plugins_url('assets/css/i-am.css', __FILE__));
 		wp_register_style('organization-chart-style', plugins_url('assets/css/organization-chart.css', __FILE__));
 		wp_register_style('we-can-do-style', plugins_url('assets/css/we-can-do.css', __FILE__));
@@ -135,6 +138,7 @@ class Widgets
 	public function widget_scripts()
 	{
 		wp_register_script('history-script', plugins_url('assets/js/history.js', __FILE__), ['jquery'], false, true);
+		wp_register_script('history-with-image-script', plugins_url('assets/js/history_with_image.js', __FILE__), ['jquery'], false, true);
 		wp_register_script('i-am-script', plugins_url('assets/js/i-am.js', __FILE__), ['jquery'], false, true);
 		wp_register_script('we-can-do-script', plugins_url('assets/js/we-can-do.js', __FILE__), ['jquery'], false, true);
 		wp_register_script('carousel_progressbar-script', plugins_url('assets/js/carousel_progressbar.js', __FILE__), ['jquery'], false, true);
