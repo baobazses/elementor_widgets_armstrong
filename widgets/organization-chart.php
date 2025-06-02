@@ -105,6 +105,7 @@ class OrganizationChart extends Widget_Base
      */
     public function get_script_depends()
     {
+        return [];
     }
 
     /**
